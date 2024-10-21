@@ -29,7 +29,7 @@ public class Move_Ground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         scrollSpeed = scrollFactor * paralaxEffect;
 
@@ -39,11 +39,6 @@ public class Move_Ground : MonoBehaviour
         {
             Reposition();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

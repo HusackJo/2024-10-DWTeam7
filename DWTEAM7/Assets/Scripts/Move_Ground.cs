@@ -41,6 +41,27 @@ public class Move_Ground : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.transform.SetParent(transform);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.transform.SetParent(null);
+        }
+    }
+
     void Reposition()
     {
         Vector2 offset = new Vector2(length * count, 0);

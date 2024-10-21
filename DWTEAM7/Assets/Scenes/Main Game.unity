@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollFactor: 2
   scrollSpeed: 0
-  paralaxEffect: 0
+  paralaxEffect: -1
   objTag: 
 --- !u!1 &552692843
 GameObject:

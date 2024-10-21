@@ -26,6 +26,8 @@ public class Move_Ground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        scrollSpeed = scrollFactor * paralaxEffect;
+
+        transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
     }
 }

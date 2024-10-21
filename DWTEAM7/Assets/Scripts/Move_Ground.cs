@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_Platform : MonoBehaviour
+public class Move_Ground : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

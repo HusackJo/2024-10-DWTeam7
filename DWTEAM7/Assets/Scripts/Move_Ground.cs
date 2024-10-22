@@ -43,10 +43,10 @@ public class Move_Ground : MonoBehaviour
             collision.transform.parent = transform;
         }
 
-        if (collision.gameObject.CompareTag("Legs"))
-        {
-            collision.transform.parent = transform;
-        }
+        //if (collision.gameObject.CompareTag("Leg"))
+        //{
+        //    collision.transform.parent = transform;
+        //}
 
         if (collision.gameObject.CompareTag("Destroy"))
         {
@@ -61,9 +61,9 @@ public class Move_Ground : MonoBehaviour
             collision.transform.parent = null;
         }
 
-        if (collision.gameObject.CompareTag("Legs"))
-        {
-            collision.transform.parent = null;
-        }
+        //if (collision.gameObject.CompareTag("Leg"))
+        //{
+        //    collision.transform.parent = null;
+        //}
     }
 }

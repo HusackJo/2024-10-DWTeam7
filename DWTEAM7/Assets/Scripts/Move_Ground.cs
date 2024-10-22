@@ -41,22 +41,21 @@ public class Move_Ground : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            other.transform.SetParent(transform);
+            collision.transform.parent = transform;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            other.transform.SetParent(null);
+            collision.transform.parent = null;
         }
     }
-
     void Reposition()
     {
         Vector2 offset = new Vector2(length * count, 0);

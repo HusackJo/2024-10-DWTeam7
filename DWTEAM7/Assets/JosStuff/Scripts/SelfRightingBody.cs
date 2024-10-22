@@ -15,8 +15,16 @@ public class SelfRightingBody : MonoBehaviour
 
     private void Update()
     {
-        float targetX = transform.position.x - ((foot1Pos.position.x + foot2Pos.position.x)/2);
-        rB.AddForce(new Vector2(targetX * stabPower, 0)); 
+        float targetX = transform.position.x - ((foot1Pos.position.x + foot2Pos.position.x) / 2);
+        if (targetX > 0 && rB.velocityX < 10)
+        {
+            rB.AddForce(new Vector2(-stabPower, 0));
+        }
+        else if (targetX < 0 && rB.velocityX > -10)
+        {
+            rB.AddForce(new Vector2(stabPower, 0));
+        }
+
         if (rB.velocityY < 0)
         {
             rB.AddForce(new Vector2(0, vertStabPower));

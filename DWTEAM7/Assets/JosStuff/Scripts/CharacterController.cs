@@ -47,7 +47,7 @@ public class CharacterController : MonoBehaviour
         }
         else { leg2CoolTimer += Time.deltaTime; }
         //handle input & add forces
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             if (leg1CoolTimer >= legsCoolDown)
             {
@@ -56,7 +56,7 @@ public class CharacterController : MonoBehaviour
                 //Debug.Log("Added Force");
             }
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             if (leg2CoolTimer >= legsCoolDown)
             {
@@ -73,7 +73,7 @@ public class CharacterController : MonoBehaviour
             {
                 knee1RB.AddForce(new Vector2(kneeForceX, kneeForceY));
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 knee2RB.AddForce(new Vector2(kneeForceX, kneeForceY));
             }

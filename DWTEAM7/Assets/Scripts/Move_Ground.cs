@@ -42,6 +42,11 @@ public class Move_Ground : MonoBehaviour
         {
             collision.transform.parent = transform;
         }
+
+        if (collision.gameObject.CompareTag("Destroy"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)

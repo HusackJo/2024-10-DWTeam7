@@ -34,11 +34,6 @@ public class Move_Ground : MonoBehaviour
         scrollSpeed = scrollFactor * paralaxEffect;
 
         transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
-
-        if (transform.position.x < -length)
-        {
-            Reposition();
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,11 +50,5 @@ public class Move_Ground : MonoBehaviour
         {
             collision.transform.parent = null;
         }
-    }
-    void Reposition()
-    {
-        Vector2 offset = new Vector2(length * count, 0);
-
-        transform.position = (Vector2)transform.position + offset;
     }
 }

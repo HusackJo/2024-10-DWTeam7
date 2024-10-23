@@ -14,12 +14,14 @@ public class CharacterController : MonoBehaviour
     public Rigidbody2D knee1RB, knee2RB;
     public Foot leg1, leg2;
     public float legsCoolDown;
-    public bool hasKnees;
+    public bool hasKnees, hasKnob;
+    public float powerAdjustment;
     public FloorScroller FloorManager;
 
     [HideInInspector]
     public float groundSpeed;
     private float leg1CoolTimer, leg2CoolTimer;
+    private float legPower = 1;
 
     private void Awake()
     {
@@ -55,7 +57,7 @@ public class CharacterController : MonoBehaviour
         {
             if (leg1CoolTimer >= legsCoolDown)
             {
-                leg1.rigidBody.AddForce(new Vector2(legForceX, legForceY));
+                leg1.rigidBody.AddForce(new Vector2(legForceX * legPower, legForceY * legPower));
                 leg1CoolTimer = 0;
                 //Debug.Log("Added Force");
             }
@@ -64,7 +66,7 @@ public class CharacterController : MonoBehaviour
         {
             if (leg2CoolTimer >= legsCoolDown)
             {
-                leg2.rigidBody.AddForce(new Vector2(legForceX, legForceY));
+                leg2.rigidBody.AddForce(new Vector2(legForceX *legPower, legForceY * legPower));
                 leg2CoolTimer = 0;
                 //Debug.Log("Added Force");
             }
@@ -75,11 +77,23 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                knee1RB.AddForce(new Vector2(kneeForceX, kneeForceY));
+                knee1RB.AddForce(new Vector2(kneeForceX * legPower, kneeForceY * legPower));
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
-                knee2RB.AddForce(new Vector2(kneeForceX, kneeForceY));
+                knee2RB.AddForce(new Vector2(kneeForceX * legPower, kneeForceY * legPower));
+            }
+        }
+
+        if (hasKnob)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                legPower += powerAdjustment;
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                legPower -= powerAdjustment;
             }
         }
     }

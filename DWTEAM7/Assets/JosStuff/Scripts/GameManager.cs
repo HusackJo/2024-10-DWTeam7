@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        //Woohoo!
+        SceneManager.LoadScene("Game Over");
     }
 }

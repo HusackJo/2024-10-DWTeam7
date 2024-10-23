@@ -7,17 +7,20 @@ using UnityEngine;
 /// </summary>
 public class FloorScroller : MonoBehaviour
 {
-    [SerializeField] public GameObject groundPrefab;
+    [SerializeField] public GameObject groundPrefab, backgroundPrefab;
     [SerializeField] public Transform spawnPoint;
     [SerializeField] public float moveSpeed;
     [SerializeField] public float spawnInterval;
     [SerializeField] public float deadZone;
 
     private float spawnTimer;
+    private int count;
 
     private void Start()
     {
         Instantiate(groundPrefab, spawnPoint.position, new Quaternion(0, 0, 0, 0), transform);
+        Instantiate(backgroundPrefab, new Vector3(spawnPoint.position.x + 8, spawnPoint.position.y + 4, spawnPoint.position.z), new Quaternion(0, 0, 0, 0), transform);
+
     }
     void FixedUpdate()
     {
@@ -26,6 +29,11 @@ public class FloorScroller : MonoBehaviour
         {
             spawnTimer -= spawnInterval;
             Instantiate(groundPrefab, spawnPoint.position, new Quaternion(0,0,0,0),transform);
+            count++;
+            if (count % 4 == 0)
+            {
+                Instantiate(backgroundPrefab, new Vector3(spawnPoint.position.x + 8, spawnPoint.position.y + 4, spawnPoint.position.z), new Quaternion(0, 0, 0, 0), transform);
+            }
         }
     }
 }

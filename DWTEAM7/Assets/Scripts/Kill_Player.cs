@@ -5,16 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Kill_Player : MonoBehaviour
 {
+    private GameManager GM;
+    private void Awake()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Game Over");
+            GM.KillPlayer();
         } 
 
         if (collision.gameObject.CompareTag("Leg"))
         {
-            SceneManager.LoadScene("Game Over");
+            GM.KillPlayer();
         }
 
     }

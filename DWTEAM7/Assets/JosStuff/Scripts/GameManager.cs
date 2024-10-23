@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public void BackToGame()
+   //Load Scenes
+    
+    public void PlayGame()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Main Game Dupe2");
     }
+
+
 
     public void KillPlayer()
     {

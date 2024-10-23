@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: cff03d45e3e96ad4c8f7b949075a7ab6
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 381f3fd9401cdea4a9e3a24f13171580
+  - enabled: 1
+    path: Assets/JosStuff/Scenes/Main Game Dupe2.unity
+    guid: 42efd0d026db5064eb7e99822928e29a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

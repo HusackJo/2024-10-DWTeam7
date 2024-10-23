@@ -112,7 +112,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: e4f17b9ed9bf0df45b994cec82d0c3f4, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -322,7 +322,7 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 1.34
   m_MaxDistanceOnly: 0
 --- !u!1 &2909610439575347099
@@ -631,7 +631,7 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 1.5000001
   m_MaxDistanceOnly: 0
 --- !u!1 &3537674202211886599
@@ -736,7 +736,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: e4f17b9ed9bf0df45b994cec82d0c3f4, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -788,7 +788,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: e7f6f4e6b160a6740b3d02f9fec96ce9, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -950,7 +950,7 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 1.5
   m_MaxDistanceOnly: 0
 --- !u!1 &4002528992057112568
@@ -1259,7 +1259,7 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 1.5000001
   m_MaxDistanceOnly: 0
 --- !u!1 &5019707129725016511
@@ -1274,6 +1274,7 @@ GameObject:
   - component: {fileID: 5944967444848272170}
   - component: {fileID: 6843581486842845660}
   - component: {fileID: 8628501283276595656}
+  - component: {fileID: 2922603215564129241}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1367,7 +1368,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: e4f17b9ed9bf0df45b994cec82d0c3f4, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1424,6 +1425,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2922603215564129241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019707129725016511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a1a1f57c6224544b3c9a03a0b469fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5159526040501692142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1492,8 @@ MonoBehaviour:
   leg2: {fileID: 7834759914289905933}
   legsCoolDown: 1.5
   hasKnees: 1
+  FloorManager: {fileID: 0}
+  groundSpeed: 0
 --- !u!1001 &1351126078017876350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1491,6 +1506,14 @@ PrefabInstance:
       propertyPath: object2
       value: 
       objectReference: {fileID: 7990309656139391646}
+    - target: {fileID: 1856321054770806111, guid: df1fb451cc9ee6e408e52d10dd3bcf53, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307986664728315010, guid: df1fb451cc9ee6e408e52d10dd3bcf53, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8000671363269941095, guid: df1fb451cc9ee6e408e52d10dd3bcf53, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1581,7 +1604,7 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 1.5
   m_MaxDistanceOnly: 0
 --- !u!4 &9063549454562223641 stripped

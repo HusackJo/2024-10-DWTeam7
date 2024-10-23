@@ -4,5 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+    /// <summary>
+    /// Death animation? "You Died" screen? Unfinished.
+    /// </summary>
+    public void KillPlayer()
+    {
+
+    }
 }

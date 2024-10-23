@@ -17,7 +17,6 @@ public class Move_Ground : MonoBehaviour
     [SerializeField]
     private string objTag;
 
-    // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -28,22 +27,17 @@ public class Move_Ground : MonoBehaviour
         count = GameObject.FindGameObjectsWithTag(objTag).Length;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         scrollSpeed = scrollFactor * paralaxEffect;
+
 
         transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.transform.parent = transform;
-        }
-
-        if (collision.gameObject.CompareTag("Legs"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Leg"))
         {
             collision.transform.parent = transform;
         }
@@ -61,7 +55,7 @@ public class Move_Ground : MonoBehaviour
             collision.transform.parent = null;
         }
 
-        if (collision.gameObject.CompareTag("Legs"))
+        if (collision.gameObject.CompareTag("Leg"))
         {
             collision.transform.parent = null;
         }

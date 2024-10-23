@@ -15,15 +15,19 @@ public class CharacterController : MonoBehaviour
     public Foot leg1, leg2;
     public float legsCoolDown;
     public bool hasKnees;
+    public FloorScroller FloorManager;
 
     [HideInInspector]
+    public float groundSpeed;
     private float leg1CoolTimer, leg2CoolTimer;
 
-    private void Start()
+    private void Awake()
     {
         leg1CoolTimer = legsCoolDown;
         leg2CoolTimer = legsCoolDown;
+        groundSpeed = FloorManager.moveSpeed;
     }
+
     private void Update()
     {
         HandleMovement();

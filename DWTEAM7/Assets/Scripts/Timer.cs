@@ -14,13 +14,6 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI timerText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         timeCounter += Time.deltaTime;

@@ -9,4 +9,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("TestScene");
     }
+
+    public void KillPlayer()
+    {
+        //Woohoo!
+    }
 }

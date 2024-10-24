@@ -14,7 +14,14 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        audioManager.PlaySFX("Vine Boom");
+        if(SceneManager.GetActiveScene().name == "Main Game")
+        {
+            audioManager.PlaySFX("Vine Boom");
+        }
+        else if (SceneManager.GetActiveScene().name == "Game Over")
+        {
+            audioManager.PlaySFX("Scream");
+        }
     }
 
     public void PlayGame()

@@ -40,7 +40,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             musicSource.clip = s.clip;
-            Debug.Log($"{musicSource.clip.name}");
             musicSource.Play();
         }
     }
@@ -56,7 +55,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             sfxSource.clip = s.clip;
-            Debug.Log($"{sfxSource.clip.name}");
             sfxSource.Play();
         }
     }

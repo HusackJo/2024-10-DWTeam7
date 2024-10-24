@@ -26,7 +26,7 @@ public class CharacterController : MonoBehaviour
     {
         leg1CoolTimer = legsCoolDown;
         leg2CoolTimer = legsCoolDown;
-        groundSpeed = FloorManager.moveSpeed;
+        groundSpeed = FloorManager.moveSpeed + (float)-0.2;
         audioMan = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         Debug.Log($"{audioMan.name}");
     }

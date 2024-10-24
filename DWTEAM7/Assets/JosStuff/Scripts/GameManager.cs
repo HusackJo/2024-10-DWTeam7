@@ -18,4 +18,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game Over");
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void QuitThisBitch()
+    {
+        Application.Quit();
+        PlayerPrefs.DeleteAll();
+    }
 }

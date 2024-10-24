@@ -25,7 +25,6 @@ public class Foot : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"{collision.gameObject.name}");
         if (collision.gameObject.tag == "Leg")
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
@@ -33,7 +32,7 @@ public class Foot : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             isGrounded = true;
-            //Debug.Log("Grounded!");
+            characterController.audioMan.PlayFootstep();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -41,7 +40,6 @@ public class Foot : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             isGrounded = false;
-            Debug.Log("Not Grounded!");
         }
     }
 }

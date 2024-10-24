@@ -5,14 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-   //Load Scenes
-    
+    //Load Scenes
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
+    private void Start()
+    {
+        audioManager.PlaySFX("Vine Boom");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Main Game Dupe2");
     }
-
-
 
     public void KillPlayer()
     {

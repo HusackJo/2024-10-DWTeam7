@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource, footstepSource;
+    public float pitchShiftMod;
+
+    private float footstepBasePitch;
 
     private void Awake()
     {
@@ -24,7 +27,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic("Music");
+        PlayMusic("Game Music");
     }
 
     public void PlayMusic(string name)
@@ -37,20 +40,30 @@ public class AudioManager : MonoBehaviour
         else
         {
             musicSource.clip = s.clip;
+            Debug.Log($"{musicSource.clip.name}");
             musicSource.Play();
         }
     }
 
-    private void PlaySFX(string name)
+    public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
         if (s == null)
         {
             //no sound found
+            Debug.Log("No SFX found!");
         }
         else
         {
-            sfxSource.PlayOneShot(s.clip);
+            sfxSource.clip = s.clip;
+            Debug.Log($"{sfxSource.clip.name}");
+            sfxSource.Play();
         }
     }
+    public void PlayFootstep()
+    {
+        footstepSource.pitch = footstepBasePitch + (UnityEngine.Random.Range(-pitchShiftMod,pitchShiftMod));
+        footstepSource.Play();
+    }
+
 }

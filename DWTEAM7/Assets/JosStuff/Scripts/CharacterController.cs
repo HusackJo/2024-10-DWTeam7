@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     public FloorScroller FloorManager;
 
     [HideInInspector]
+    public AudioManager audioMan;
     public float groundSpeed;
     private float leg1CoolTimer, leg2CoolTimer;
 
@@ -26,6 +27,8 @@ public class CharacterController : MonoBehaviour
         leg1CoolTimer = legsCoolDown;
         leg2CoolTimer = legsCoolDown;
         groundSpeed = FloorManager.moveSpeed;
+        audioMan = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        Debug.Log($"{audioMan.name}");
     }
 
     private void Update()
@@ -57,6 +60,7 @@ public class CharacterController : MonoBehaviour
             {
                 leg1.rigidBody.AddForce(new Vector2(legForceX, legForceY));
                 leg1CoolTimer = 0;
+                audioMan.PlaySFX("Move Sound");
                 //Debug.Log("Added Force");
             }
         }
@@ -66,6 +70,7 @@ public class CharacterController : MonoBehaviour
             {
                 leg2.rigidBody.AddForce(new Vector2(legForceX, legForceY));
                 leg2CoolTimer = 0;
+                audioMan.PlaySFX("Move Sound");
                 //Debug.Log("Added Force");
             }
         }
@@ -76,10 +81,12 @@ public class CharacterController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A))
             {
                 knee1RB.AddForce(new Vector2(kneeForceX, kneeForceY));
+                audioMan.PlaySFX("Move Sound");
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
                 knee2RB.AddForce(new Vector2(kneeForceX, kneeForceY));
+                audioMan.PlaySFX("Move Sound");
             }
         }
     }

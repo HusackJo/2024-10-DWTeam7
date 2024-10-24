@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
+    public AudioSource musicSource, sfxSource, footstepSource;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void playSFX(string name)
+    private void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
         if (s == null)

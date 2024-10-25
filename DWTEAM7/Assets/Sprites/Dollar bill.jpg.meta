@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dollar bill_0: 4680218184607795860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

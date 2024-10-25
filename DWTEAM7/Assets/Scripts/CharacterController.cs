@@ -47,12 +47,10 @@ public class CharacterController : MonoBehaviour
         {
             leg1CoolTimer = legsCoolDown;
         }
-        else { leg1CoolTimer += Time.deltaTime; }
         if (leg2.isGrounded)
         {
             leg2CoolTimer = legsCoolDown;
         }
-        else { leg2CoolTimer += Time.deltaTime; }
         //handle input & add forces
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -78,16 +76,19 @@ public class CharacterController : MonoBehaviour
         //Knee moves, input and forces
         if (hasKnees)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && leg1CoolTimer >= legsCoolDown)
             {
                 knee1RB.AddForce(new Vector2(kneeForceX, kneeForceY));
+                leg1CoolTimer = 0;
                 audioMan.PlaySFX("Move Sound");
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && leg2CoolTimer >= legsCoolDown)
             {
                 knee2RB.AddForce(new Vector2(kneeForceX, kneeForceY));
+                leg2CoolTimer = 0;
                 audioMan.PlaySFX("Move Sound");
             }
         }
+        groundSpeed -= (float)0.00002;
     }
 }

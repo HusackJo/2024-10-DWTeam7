@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Game Music
-    clip: {fileID: 8300000, guid: e296f7ade19d34e4ba9d8c970f1b5083, type: 3}
+    clip: {fileID: 8300000, guid: f64bc8f476143964682c606aa7d35baa, type: 3}
   sfxSounds:
   - name: Vine Boom
     clip: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
